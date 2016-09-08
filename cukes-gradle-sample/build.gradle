@@ -1,0 +1,132 @@
+buildscript {
+    repositories {
+        maven {
+            url "http://repo.bodar.com"
+        }
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        
+    }
+    dependencies {
+       classpath 'com.commercehub:gradle-cucumber-jvm-plugin:0.7'
+    }
+}
+
+
+
+
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+apply plugin: 'cucumber-jvm'
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    // Use 'jcenter' for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+    mavenCentral()
+ maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+
+	// Selenium dependencies
+	compile group: 'junit', name: 'junit', version: '4.+'
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.+'
+	compile group: 'commons-io', name: 'commons-io', version: '1.3.+'
+        compile group: 'junit', name: 'junit', version: '4.+'
+        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
+        compile group: 'net.sf.opencsv', name: 'opencsv', version: '2.+'
+        compile group: 'org.testng', name: 'testng', version:'6.9.+'
+        compile group: 'org.uncommons', name: 'reportng', version: '1.1.+'
+
+	// cucumber dependencies
+	compile group: 'info.cukes', name: 'cucumber-groovy', version: '1.2.+'
+	compile group: 'info.cukes', name: 'cucumber-jvm', version: '1+'
+        compile group: 'info.cukes', name: 'cucumber-jvm-deps', version:'1+'
+        compile group: 'info.cukes', name: 'cucumber-java', version:'1+'
+        compile group: 'info.cukes', name: 'cucumber-junit', version:'1+'
+        compile group: 'info.cukes', name: 'cucumber-core', version:'1+'
+
+	// groovy dependencies
+	compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.4.+'
+
+	// TestNG
+	compile group: 'org.testng', name: 'testng', version: '6.9.+'
+
+}
+
+//import org.gradle.internal.os.OperatingSystem;
+
+//task downloadChromeDriverZip(type: Download){
+//  if (OperatingSystem.current().isMacOsX()) 
+ // {
+  //  src 'http://chromedriver.storage.googleapis.com/2.21/chromedriver_mac32.zip'
+  //}
+  //else if (OperatingSystem.current().isLinux()) 
+  //{
+    //src 'http://chromedriver.storage.googleapis.com/2.21/chromedriver_linux64.zip'
+  //}
+  //else 
+  //{
+    //src 'http://chromedriver.storage.googleapis.com/2.21/chromedriver_win32.zip'
+  //}
+  
+  //dest new File(buildDir, 'chromedriver.zip')
+  //quiet false
+  //overwrite true
+  //onlyIfNewer true
+  //compress false
+  //println "Download Chrome driver: " + src + " to " + dest
+//}
+
+//task downloadAndUnzipChromeDriver(dependsOn: downloadChromeDriverZip, type: Copy){
+  //println "Unzip Chrome driver: " + downloadChromeDriverZip.dest
+  //from zipTree(downloadChromeDriverZip.dest)
+  //into buildDir
+//}
+
+//task chrome(type: Test, dependsOn: downloadAndUnzipChromeDriver){
+  //String extension = OperatingSystem.current().isWindows() ? '.exe' : ''
+  //File chromeDriver = new File(buildDir, 'chromedriver' + extension);
+  //systemProperties['webdriver.chrome.driver'] = chromeDriver
+  //println "Use Chrome driver: $chromeDriver"
+
+  //systemProperties['webdriver.chrome.driver'] = chromeDriver
+//}
+
+//task firefox(type: Test){
+  //systemProperties['selenide.browser'] = 'firefox'
+//}
+
+
+addCucumberSuite 'cucumberTest'
+
+cucumber {
+    maxParallelForks = 3
+}
+
+// In order to work, it has to exist a sources folder with the name src/cucumberTest/sources
+// this directory has to have a package with the name features containing the features that will be executed
+// The config.properties file has to be in the same folder: src/cucumberTest/sources
+cucumberTest {
+    systemProperties['user.dir'] = projectDir
+    stepDefinitionRoots = ['classpath:cucumber/steps']
+    junitReport = true
+    tags = ['~@WIP']
+    //isStrict = true
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    cucumberTestCompile 'info.cukes:cucumber-java:1.2.4'
+}

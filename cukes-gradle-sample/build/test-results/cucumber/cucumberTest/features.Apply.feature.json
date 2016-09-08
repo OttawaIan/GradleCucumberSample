@@ -1,0 +1,160 @@
+[
+  {
+    "id": "apply-to-amaris",
+    "description": "I want to be able to check that the amaris apply page is working correctly",
+    "name": "Apply to amaris",
+    "keyword": "Feature",
+    "line": 19,
+    "elements": [
+      {
+        "after": [
+          {
+            "result": {
+              "duration": 101762,
+              "status": "failed",
+              "error_message": "java.lang.NullPointerException\r\n\tat cucumber.steps.ApplySteps.embedScreenshot(ApplySteps.java:100)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:601)\r\n\tat cucumber.runtime.Utils$1.call(Utils.java:37)\r\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:13)\r\n\tat cucumber.runtime.Utils.invoke(Utils.java:31)\r\n\tat cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)\r\n\tat cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:223)\r\n\tat cucumber.runtime.Runtime.runHooks(Runtime.java:211)\r\n\tat cucumber.runtime.Runtime.runAfterHooks(Runtime.java:205)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)\r\n\tat cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)\r\n\tat cucumber.runtime.Runtime.run(Runtime.java:121)\r\n\tat cucumber.api.cli.Main.run(Main.java:36)\r\n\tat cucumber.api.cli.Main.main(Main.java:18)\r\n"
+            },
+            "match": {
+              "location": "ApplySteps.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "id": "apply-to-amaris;open-the-amaris-page",
+        "tags": [
+          {
+            "name": "@Apply",
+            "line": 22
+          }
+        ],
+        "before": [
+          {
+            "result": {
+              "duration": 159362,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplySteps.embedScreenshotStep(Scenario)"
+            }
+          }
+        ],
+        "description": "",
+        "name": "Open the amaris page",
+        "keyword": "Scenario",
+        "line": 23,
+        "steps": [
+          {
+            "result": {
+              "duration": 522272348,
+              "status": "failed",
+              "error_message": "java.lang.IllegalStateException: The driver executable does not exist: C:\\Users\\Ian\\Documents\\GitHub\\GradleCucumberSample\\cukes-gradle-sample\\build\\chromedriver.exe\r\n\tat com.google.common.base.Preconditions.checkState(Preconditions.java:199)\r\n\tat org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:121)\r\n\tat org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:116)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:32)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:137)\r\n\tat org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:296)\r\n\tat org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:88)\r\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:116)\r\n\tat webdriverContext.BrowserContext.\u003cinit\u003e(BrowserContext.java:67)\r\n\tat cucumber.steps.ApplySteps.i_navigate_to_the_amaris_web_page(ApplySteps.java:45)\r\n\tat ?.Given I navigate to the amaris web page(features/Apply.feature:24)\r\n"
+            },
+            "name": "I navigate to the amaris web page",
+            "keyword": "Given ",
+            "line": 24,
+            "match": {
+              "location": "ApplySteps.i_navigate_to_the_amaris_web_page()"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "name": "I click on the apply button",
+            "keyword": "When ",
+            "line": 25,
+            "match": {
+              "location": "ApplySteps.i_click_on_the_apply_button()"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "name": "The apply page has to be loaded correctly",
+            "keyword": "Then ",
+            "line": 26,
+            "match": {
+              "location": "ApplySteps.the_apply_page_has_to_be_loaded_correctly()"
+            }
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "features/Apply.feature",
+    "comments": [
+      {
+        "value": "#Author: your.email@your.domain.com",
+        "line": 1
+      },
+      {
+        "value": "#Keywords Summary :",
+        "line": 2
+      },
+      {
+        "value": "#Feature: List of scenarios.",
+        "line": 3
+      },
+      {
+        "value": "#Scenario: Business rule through list of steps with arguments.",
+        "line": 4
+      },
+      {
+        "value": "#Given: Some precondition step",
+        "line": 5
+      },
+      {
+        "value": "#When: Some key actions",
+        "line": 6
+      },
+      {
+        "value": "#Then: To observe outcomes or validation",
+        "line": 7
+      },
+      {
+        "value": "#And,But: To enumerate more Given,When,Then steps",
+        "line": 8
+      },
+      {
+        "value": "#Scenario Outline: List of steps for data-driven as an Examples and \u003cplaceholder\u003e",
+        "line": 9
+      },
+      {
+        "value": "#Examples: Container for s table",
+        "line": 10
+      },
+      {
+        "value": "#Background: List of steps run before each of the scenarios",
+        "line": 11
+      },
+      {
+        "value": "#\"\"\" (Doc Strings)",
+        "line": 12
+      },
+      {
+        "value": "#| (Data Tables)",
+        "line": 13
+      },
+      {
+        "value": "#@ (Tags/Labels):To group Scenarios",
+        "line": 14
+      },
+      {
+        "value": "#\u003c\u003e (placeholder)",
+        "line": 15
+      },
+      {
+        "value": "#\"\"",
+        "line": 16
+      },
+      {
+        "value": "## (Comments)",
+        "line": 17
+      },
+      {
+        "value": "#Sample Feature Definition Template",
+        "line": 18
+      }
+    ]
+  }
+]
