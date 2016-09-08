@@ -119,7 +119,7 @@ cucumberTest {
     systemProperties['user.dir'] = projectDir
     stepDefinitionRoots = ['classpath:cucumber/steps']
     junitReport = true
-    //tags = ['~@WIP']
+    tags = ['~@WIP']
     //isStrict = true
 }
 
